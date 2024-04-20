@@ -1,0 +1,38 @@
+<div class="container">
+  <a href="/">DeCocco</a>
+</div>
+
+<style>
+  @keyframes animation {
+    0% { transform: rotate(-7deg); }
+    50% { transform: rotate(7deg); }
+    100% { transform: rotate(-7deg); }
+  }
+
+  .container {
+    border: 3px solid;
+    border-color: white;
+    border-radius: 100px;
+    cursor: pointer;
+    font-size: 40px;
+    padding-inline: 10px;
+    transform: rotate(-7deg);
+    @media (width < 768px) {
+      border: 2px solid;
+      border-color: white;
+      font-size: 28px;
+    }
+  }
+  div:hover {
+    animation-duration: 0.15s;
+    animation-fill-mode: both;
+    animation-iteration-count: 3;
+    animation-name: animation;
+    animation-timing-function: cubic-bezier(0.65, 0.05, 0.36, 1);
+  }
+  a {
+    font-family: Parisienne;
+    color:#fff;
+    text-decoration: none;
+  }
+</style>

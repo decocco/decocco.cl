@@ -1,0 +1,72 @@
+---
+type Props = {
+  href: string;
+  text: string;
+}
+
+const { href, text } = Astro.props;
+
+const { pathname } = Astro.url;
+const subpath = pathname.match(/[^\/]+/g);
+const isActive = href === pathname || href === '/' + subpath?.[0];
+---
+
+<a href={href}>
+  <p class:list={["text", { active: isActive }]} data-text={text}>
+    {text}
+  </p>
+</a>
+<style>
+	a {
+    color: #fff;
+		display: inline-block;
+    margin: 0 20px;
+		text-decoration: none;
+    text-transform: lowercase;
+	}
+  a:hover {
+    cursor: pointer;
+  }
+  a:last-child {
+    margin-right: 0;
+  }
+  .text {
+    --s:0.2ch;
+
+    color: var(--colors-gray1);
+    font-family: monospace;
+    font-size: 24px;
+    letter-spacing: var(--s);
+    overflow: hidden;
+    position: relative;    
+  }
+  
+  .text.active {
+    font-weight: bold;
+    text-transform: uppercase;
+    color:#fff;
+  }
+  .text.active::before {
+    background: unset;
+    color:#fff;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  .text::before {
+  content: attr(data-text);
+  text-transform: uppercase;
+  background: var(--colors-gray1);
+  color: var(--colors-primary);
+  position: absolute;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+  transition: width 1s;
+}
+
+.text:hover::before {
+  width: 100%;
+}
+</style>

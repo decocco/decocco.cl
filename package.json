@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.5.4",
+    "@fontsource/lato": "^5.0.20",
     "@fontsource/parisienne": "^5.0.8",
     "astro": "^4.3.7",
     "typescript": "^5.3.3"

@@ -1,0 +1,53 @@
+---
+import Logo from "./Logo.astro";
+import NavbarOption from "./NavbarOption.astro";
+---
+
+<section>
+  <Logo />
+  <div class="container">
+    <div class="navbar">
+      <NavbarOption href="/" text="home" />
+      <NavbarOption href="/blog" text="blog" />
+      <NavbarOption href="/about" text="about" />
+      <NavbarOption href="/projects" text="projects" />
+    </div>
+    <svg width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <path d="M4 6l16 0" />
+      <path d="M4 12l16 0" />
+      <path d="M4 18l16 0" />
+    </svg>
+  </div>
+</section>
+
+<style>
+  section {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+    @media (width < 768px) {
+      margin: 0 20px;
+    }
+  }
+  .container {
+    align-items: center;
+    display:flex;
+    justify-content: flex-end;
+    height:100%;
+    width:100%;
+  }
+  .navbar {
+    @media (width < 768px) {
+      position: absolute;
+      visibility: hidden;
+    }
+  }
+  svg {
+    @media (width >= 768px) {
+      position: absolute;
+      visibility: hidden;
+    }
+  }
+</style>

@@ -1,6 +1,7 @@
 ---
 import Logo from "./Logo.astro";
 import NavbarOption from "./NavbarOption.astro";
+import Hamburger from "./Hamburger.astro";
 ---
 
 <section>
@@ -12,13 +13,8 @@ import NavbarOption from "./NavbarOption.astro";
       <NavbarOption href="/about" text="about" />
       <NavbarOption href="/projects" text="projects" />
     </div>
-    <svg width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke=var(--colors-white) fill="none" stroke-linecap="round" stroke-linejoin="round">
-      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-      <path d="M4 6l16 0" />
-      <path d="M4 12l16 0" />
-      <path d="M4 18l16 0" />
-    </svg>
-  </div>
+    <Hamburger />
+   </div>
 </section>
 
 <style>
@@ -40,12 +36,6 @@ import NavbarOption from "./NavbarOption.astro";
   }
   .navbar {
     @media (width < 768px) {
-      position: absolute;
-      visibility: hidden;
-    }
-  }
-  svg {
-    @media (width >= 768px) {
       position: absolute;
       visibility: hidden;
     }

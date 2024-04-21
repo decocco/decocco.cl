@@ -1,5 +1,6 @@
 ---
 import Navbar from '../components/Navbar/Navbar.astro'
+import Aside from '../components/Aside/Aside.astro';
 import '@fontsource/parisienne';
 import '@fontsource/lato/100.css';
 import '@fontsource/lato/300.css';
@@ -22,13 +23,16 @@ const { title } = Astro.props
     <meta name='viewport' content='width=device-width' />
     <meta name='generator' content={Astro.generator} />
     <link rel='icon' type='image/jpeg' href='/assets/myself.jpeg' />
+    <script src="https://kit.fontawesome.com/b8ee90d27a.js" crossorigin="anonymous" />
     <title>{title}</title>
   </head>
   <body>
     <header>
       <Navbar />
     </header>
-    <aside>aside</aside>
+    <aside>
+      <Aside />
+    </aside>
     <main>
       <slot />
     </main>
@@ -41,8 +45,12 @@ const { title } = Astro.props
   html {
     background: var(--colors-primary);
     font-family: 'Lato', sans-serif;
-    --colors-primary: #131416;
+    --colors-black: #000000;
     --colors-gray1: #444444;
+    --colors-primary: #c7d0e0;
+    --colors-red: #E1306C;
+    --colors-skyblue:#0177B5;
+    --colors-white: #ffffff;
   }
   body {
     display: grid;
@@ -76,11 +84,11 @@ const { title } = Astro.props
   }
   main {
     grid-area: content;
-    border-top: 2px solid white;
-    border-left: 2px solid white;
+    border-top: 2px solid var(--colors-white);
+    border-left: 2px solid var(--colors-white);
     border-top-left-radius: 12px;
     @media (width < 768px) {
-      border-bottom: 2px solid white;
+      border-bottom: 2px solid var(--colors-white);
       border-left: unset;
       border-top-left-radius: unset;
       margin-inline: 20px;

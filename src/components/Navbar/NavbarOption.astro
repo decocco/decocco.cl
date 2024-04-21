@@ -18,7 +18,7 @@ const isActive = href === pathname || href === '/' + subpath?.[0];
 </a>
 <style>
 	a {
-    color: #fff;
+    color: var(--colors-white);
 		display: inline-block;
     margin: 0 20px;
 		text-decoration: none;
@@ -42,28 +42,28 @@ const isActive = href === pathname || href === '/' + subpath?.[0];
   }
   
   .text.active {
+    color:var(--colors-white);
     font-weight: bold;
     text-transform: uppercase;
-    color:#fff;
   }
   .text.active::before {
     background: unset;
-    color:#fff;
+    color:var(--colors-white);
     font-weight: bold;
     text-transform: uppercase;
   }
   .text::before {
-  content: attr(data-text);
-  text-transform: uppercase;
-  background: var(--colors-gray1);
-  color: var(--colors-primary);
-  position: absolute;
-  top: 0;
-  left: 0;
-  white-space: nowrap;
-  overflow: hidden;
-  width: 0;
-  transition: width 1s;
+    background: var(--colors-gray1);
+    color: var(--colors-primary);
+    content: attr(data-text);
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    text-transform: uppercase;
+    top: 0;
+    transition: width 1s;
+    white-space: nowrap;
+    width: 0;
 }
 
 .text:hover::before {

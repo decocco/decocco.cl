@@ -1,43 +1,85 @@
 ---
 import Logo from "./Logo.astro";
 import NavbarOption from "./NavbarOption.astro";
-import Hamburger from "./Hamburger.astro";
 ---
 
-<section>
+<section class="nav">
+  <input type="checkbox" id="nav-check">
   <Logo />
-  <div class="container">
-    <div class="navbar">
+  <div class="nav-btn">
+    <label for="nav-check">
+      <i class="fa-solid fa-bars"/>
+    </label>
+  </div>
+
+    <div class="nav-links">
       <NavbarOption href="/" text="home" />
       <NavbarOption href="/blog" text="blog" />
       <NavbarOption href="/about" text="about" />
       <NavbarOption href="/projects" text="projects" />
     </div>
-    <Hamburger />
-   </div>
 </section>
 
 <style>
-  section {
+.nav {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: space-between;
+  width: 100%;
+  position: relative;
+  @media (width < 768px) {
+      margin-left: 20px;
+    }
+}
+
+.nav-btn {
+  display: none;
+}
+#nav-check {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .nav-btn {
+    display: inline-block;
+    margin-right: 20px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+  }
+  label {
     align-items: center;
+    color: var(--colors-white);
     display: flex;
-    height: 100%;
-    justify-content: space-between;
-    @media (width < 768px) {
-      margin: 0 20px;
-    }
+    height: 80px;
+    justify-content: center;
+    padding-right: 20px;
   }
-  .container {
-    align-items: center;
-    display:flex;
-    justify-content: flex-end;
-    height:100%;
-    width:100%;
+  label:hover {
+    cursor: pointer;
+    font-size: 20px;
   }
-  .navbar {
-    @media (width < 768px) {
-      position: absolute;
-      visibility: hidden;
-    }
+  .nav-links {
+    background-color: #333;
+    display: flex;
+    flex-direction: column;
+    left: 0px;
+    height: 0px;
+    overflow-y: hidden;
+    position: absolute;
+    top: 80px;
+    transition: all 300ms ease-in;
+    width: 100%;
+    z-index: 10;
   }
+
+  .nav > #nav-check:not(:checked) ~ .nav-links {
+    height: 0px;
+  }
+  .nav > #nav-check:checked ~ .nav-links {
+    height: calc(100vh - 50px);
+    overflow-y: auto;
+  }
+}
 </style>

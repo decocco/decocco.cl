@@ -1,0 +1,40 @@
+<div>
+  <p class="welcome">Hello world!</p>
+  <p class="me">I am Jeremy</p>
+  <p class="title">SOFTWARE ENGINEER</p>
+</div>
+
+<style>
+  div {
+    flex: 1;
+    text-align: center;
+    @media (max-width: 1200px) {
+      position: absolute;
+    }
+  }
+
+  .title {
+    font-size: 2em;
+    font-weight: 400;
+    margin: 0;
+    @media (max-width: 1200px) {
+      color: var(--colors-white);
+    }
+  }
+  .welcome {
+    font-size: 3em;
+    font-weight: 300;
+    margin: 0;
+    @media (max-width: 1200px) {
+      color: var(--colors-white);
+    }
+  }
+  .me {
+    color: var(--colors-white);
+    font-size: 5em;
+    margin: 22px 0 50px 0;
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: var(--colors-gray1);
+  }
+</style>
+

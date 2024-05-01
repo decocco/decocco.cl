@@ -1,8 +1,28 @@
 ---
+import WelcomeMessage from '../components/Home/WelcomeMessage.astro'
+import WelcomeImage from '../components/Home/WelcomeImage.astro'
 import Layout from '../layouts/Layout.astro'
 ---
 
 <Layout title="DeCocco's Portfolio">
-HOME
+  <div class="home-container">
+    <WelcomeMessage />
+    <WelcomeImage />
+  </div>
 </Layout>
 
+<style>
+  .home-container {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    justify-content: space-evenly;
+    position: relative;
+    width: 100%;
+    @media (max-width: 1200px) {
+      flex-direction: column-reverse;
+    }
+  }
+  
+</style>

@@ -1,5 +1,5 @@
 
-<div class="container">
+<div class="aside-container">
   <a href="https://github.com/decocco" target="_blank">
     <i id="github" class="fa-brands fa-github" />
   </a>
@@ -15,7 +15,7 @@
 </div>
 
 <style>
-  .container {
+  .aside-container {
     color: var(--colors-gray1);
     display: flex;
     flex-direction: column;
@@ -27,7 +27,7 @@
     width: 100%;
     
 
-    @media (width < 768px) {
+    @media (max-width: 768px) {
       font-size: 30px;
       flex-direction: row;
     }
@@ -51,10 +51,10 @@
       color: var(--colors-black);
     }
     &#instagram:hover {
-      color: var(--colors-red);
+      color: var(--colors-instagram);
     }
     &#linkedin:hover {
-      color: var(--colors-skyblue);
+      color: var(--colors-linkedin);
     }
     &#mail:hover {
       color: var(--colors-white);

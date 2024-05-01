@@ -1,6 +1,6 @@
 ---
-import Logo from "./Logo.astro";
-import NavbarOption from "./NavbarOption.astro";
+import Logo from "../components/Navbar/Logo.astro";
+import NavbarOption from "../components/Navbar/NavbarOption.astro";
 ---
 
 <section class="nav">
@@ -26,9 +26,8 @@ import NavbarOption from "./NavbarOption.astro";
   display: flex;
   height: 100%;
   justify-content: space-between;
-  width: 100%;
   position: relative;
-  @media (width < 768px) {
+  @media (max-width: 768px) {
       margin-left: 20px;
     }
 }
@@ -61,7 +60,7 @@ import NavbarOption from "./NavbarOption.astro";
     font-size: 20px;
   }
   .nav-links {
-    background-color: #333;
+    background-color: var(--colors-black);
     display: flex;
     flex-direction: column;
     left: 0px;

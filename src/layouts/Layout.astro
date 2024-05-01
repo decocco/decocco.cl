@@ -1,6 +1,6 @@
 ---
-import Navbar from '../components/Navbar/Navbar.astro'
-import Aside from '../components/Aside/Aside.astro';
+import Navbar from './Navbar.astro'
+import Aside from './Aside.astro';
 import '@fontsource/parisienne';
 import '@fontsource/lato/100.css';
 import '@fontsource/lato/300.css';
@@ -39,18 +39,15 @@ const { title } = Astro.props
   </body>
 </html>
 <style is:global>
-  * {
-    box-sizing: border-box !important;
-  }
   html {
     background: var(--colors-primary);
     font-family: 'Lato', sans-serif;
-    --colors-black: #000000;
-    --colors-gray1: #444444;
-    --colors-primary: #c7d0e0;
-    --colors-red: #E1306C;
-    --colors-skyblue:#0177B5;
-    --colors-white: #ffffff;
+    --colors-black: #2b2824;
+    --colors-gray1: #56494C;
+    --colors-primary: #AFBFC0;
+    --colors-instagram: #E1306C;
+    --colors-linkedin: #0177B5;
+    --colors-white: #E8F7EE;
   }
   body {
     display: grid;
@@ -62,7 +59,7 @@ const { title } = Astro.props
     height: 100vh;
     margin: 0;
 
-    @media (width < 768px) {
+    @media (max-width: 768px) {
       grid-template-columns: 1fr;
       grid-template-rows: 80px 1fr 80px;
       grid-template-areas:
@@ -75,7 +72,7 @@ const { title } = Astro.props
     grid-area: head;
     padding-left: 16px;
     padding-right: 32px;
-    @media (width < 768px) {
+    @media (max-width: 768px) {
       padding-inline: 0px;
     }
   }
@@ -83,11 +80,12 @@ const { title } = Astro.props
     grid-area: side;
   }
   main {
-    grid-area: content;
     border-top: 2px solid var(--colors-white);
     border-left: 2px solid var(--colors-white);
     border-top-left-radius: 12px;
-    @media (width < 768px) {
+    grid-area: content;
+    overflow: scroll;
+    @media (max-width: 768px) {
       border-bottom: 2px solid var(--colors-white);
       border-left: unset;
       border-top-left-radius: unset;

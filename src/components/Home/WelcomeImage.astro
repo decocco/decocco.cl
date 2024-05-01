@@ -2,7 +2,7 @@
   <div class="welcome-img-container">
     <img
       alt="A picture of Jeremy looking the horizon"
-      src="../../../public/assets/myself2.png"
+      src="/assets/myself2.png"
     >
   </div>
 </div>
@@ -11,7 +11,7 @@
   img {
     filter: grayscale(95%);
     scale: 1;
-    @media (width < 768px) {
+    @media (max-width: 768px) {
       bottom: 0;
       position: absolute;
       scale: 1.1;
@@ -26,7 +26,7 @@
     max-width: 725px;
     min-width: 695px;
     width: 100%;
-    @media (width < 768px) {
+    @media (max-width: 768px) {
       position: absolute;
       z-index: -1;
     }
@@ -43,7 +43,7 @@
     overflow: hidden;
     z-index: -1;
 
-    @media (width < 768px) {
+    @media (max-width: 768px) {
       border-radius: 0;
       height: 100%;
       padding: 0;

@@ -59,7 +59,7 @@ const { title } = Astro.props
     height: 100vh;
     margin: 0;
 
-    @media (width < 768px) {
+    @media (max-width: 768px) {
       grid-template-columns: 1fr;
       grid-template-rows: 80px 1fr 80px;
       grid-template-areas:
@@ -72,7 +72,7 @@ const { title } = Astro.props
     grid-area: head;
     padding-left: 16px;
     padding-right: 32px;
-    @media (width < 768px) {
+    @media (max-width: 768px) {
       padding-inline: 0px;
     }
   }
@@ -85,7 +85,7 @@ const { title } = Astro.props
     border-top-left-radius: 12px;
     grid-area: content;
     overflow: scroll;
-    @media (width < 768px) {
+    @media (max-width: 768px) {
       border-bottom: 2px solid var(--colors-white);
       border-left: unset;
       border-top-left-radius: unset;
